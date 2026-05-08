@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eryanan <eryanan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/24 06:52:20 by eryanan           #+#    #+#             */
-/*   Updated: 2026/04/30 15:25:33 by eryanan          ###   ########.fr       */
+/*   Created: 2026/04/29 04:13:26 by eryanan           #+#    #+#             */
+/*   Updated: 2026/04/30 17:50:09 by eryanan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+int	ft_lstsize(t_list *lst)
 
 {
-	unsigned int	i;
-	char			loc;
+	int	i;
 
-	loc = (char) c;
 	i = 0;
-	while (str[i])
+	while (lst != NULL)
 	{
-		if (str[i] == loc)
-			return ((char *) &str[i]);
 		i++;
+		lst = lst->next;
 	}
-	if (str[i] == loc)
-		return ((char *) &str[i]);
-	return (NULL);
+	return (i);
 }

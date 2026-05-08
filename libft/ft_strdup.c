@@ -6,13 +6,13 @@
 /*   By: eryanan <eryanan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 07:33:04 by eryanan           #+#    #+#             */
-/*   Updated: 2026/04/27 14:53:13 by eryanan          ###   ########.fr       */
+/*   Updated: 2026/04/30 17:48:00 by eryanan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-const char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 
 {
 	char	*dest;

@@ -1,29 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_printf_help.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eryanan <eryanan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/29 01:24:51 by eryanan           #+#    #+#             */
-/*   Updated: 2026/04/30 17:45:28 by eryanan          ###   ########.fr       */
+/*   Created: 2026/05/07 04:08:03 by eryanan           #+#    #+#             */
+/*   Updated: 2026/05/07 05:21:08 by eryanan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_str_help(char *s)
 
 {
+	if (!s)
+		return (ft_str_help("(null)"));
+	ft_putstr_fd(s, 1);
+	return (ft_strlen(s));
+}
+
+int	ft_nbr_help(int n)
+
+{
+	int		count;
 	long	nb;
 
 	nb = n;
+	count = 0;
 	if (nb < 0)
 	{
-		ft_putchar_fd('-', fd);
+		count += ft_puthelp('-');
 		nb = -nb;
 	}
 	if (nb > 9)
-		ft_putnbr_fd(nb / 10, fd);
-	ft_putchar_fd(nb % 10 + '0', fd);
+		count += ft_nbr_help((int)(nb / 10));
+	count += ft_puthelp((int)(nb % 10) + '0');
+	return (count);
+}
+
+int	ft_puthelp(char c)
+
+{
+	ft_putchar_fd(c, 1);
+	return (1);
 }

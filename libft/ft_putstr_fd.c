@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryanan <eryanan@learner.42.tech>          +#+  +:+       +#+        */
+/*   By: eryanan <eryanan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 17:26:17 by eryanan           #+#    #+#             */
-/*   Updated: 2026/04/27 17:27:38 by eryanan          ###   ########.fr       */
+/*   Updated: 2026/04/30 16:24:01 by eryanan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,7 @@
 void	ft_putstr_fd(char *s, int fd)
 
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		write(fd, &s, 1);
-		i++;
-	}
+	if (!s)
+		return ;
+	write(fd, s, ft_strlen(s));
 }

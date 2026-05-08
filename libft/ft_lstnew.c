@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryanan <eryanan@learner.42.tech>          +#+  +:+       +#+        */
+/*   By: eryanan <eryanan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 20:20:39 by eryanan           #+#    #+#             */
-/*   Updated: 2026/04/29 01:42:49 by eryanan          ###   ########.fr       */
+/*   Updated: 2026/04/30 16:04:10 by eryanan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_list	*ft_lstnew(void *content)
 
 {
-	t_list	age;
+	t_list	*age;
 
 	age = malloc(sizeof(t_list));
 	if (!age)

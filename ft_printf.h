@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eryanan <eryanan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/24 06:52:20 by eryanan           #+#    #+#             */
-/*   Updated: 2026/04/30 15:25:33 by eryanan          ###   ########.fr       */
+/*   Created: 2026/05/07 04:28:02 by eryanan           #+#    #+#             */
+/*   Updated: 2026/05/07 05:13:21 by eryanan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-char	*ft_strchr(const char *str, int c)
+# include <stdarg.h>
+# include <unistd.h>
+# include "libft/libft.h"
 
-{
-	unsigned int	i;
-	char			loc;
+int	ft_printf(const char *format, ...);
 
-	loc = (char) c;
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == loc)
-			return ((char *) &str[i]);
-		i++;
-	}
-	if (str[i] == loc)
-		return ((char *) &str[i]);
-	return (NULL);
-}
+int	ft_lillard(int spe, va_list args);
+
+int	ft_putnbr_unsigned(unsigned int nb);
+
+int	ft_putnbr_hexa(unsigned long nb, char *base);
+
+int	ft_putptr(void *sacri);
+
+int	ft_str_help(char *s);
+
+int	ft_nbr_help(int n);
+
+int	ft_puthelp(char c);
+
+#endif

@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryanan <eryanan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: eryanan <eryanan@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/24 06:52:20 by eryanan           #+#    #+#             */
-/*   Updated: 2026/04/30 15:25:33 by eryanan          ###   ########.fr       */
+/*   Created: 2026/04/29 04:42:46 by eryanan           #+#    #+#             */
+/*   Updated: 2026/04/29 04:45:13 by eryanan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 
 {
-	unsigned int	i;
-	char			loc;
+	t_list	*last;
 
-	loc = (char) c;
-	i = 0;
-	while (str[i])
+	if (lst == NULL || new == NULL)
+		return ;
+	if (*lst == NULL)
 	{
-		if (str[i] == loc)
-			return ((char *) &str[i]);
-		i++;
+		*lst = new;
+		return ;
 	}
-	if (str[i] == loc)
-		return ((char *) &str[i]);
-	return (NULL);
+	last = ft_lstlast(*lst);
+	last->next = new;
 }
